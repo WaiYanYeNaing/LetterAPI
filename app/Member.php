@@ -12,4 +12,8 @@ class Member extends Model
         'description'
     ];
     use SoftDeletes;
+    public function categories()
+    {
+        return $this->belongsToMany(Category::class, 'member_categories');
+    }
 }

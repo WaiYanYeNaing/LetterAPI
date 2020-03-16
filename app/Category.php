@@ -11,4 +11,8 @@ class Category extends Model
         'category'
     ];
     use SoftDeletes;
+    public function members()
+    {
+        return $this->belongsToMany(Member::class);
+    }
 }
